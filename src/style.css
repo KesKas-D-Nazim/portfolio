@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  height: 100vh;
+  width: 100vw;
+  background-image: url("/main.jpeg");
+  background-size: cover;
+}
+
+.main,
+.left,
+.right {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.main img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  min-width: 8rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: transparent;
+  position: absolute;
+  color: white;
+  font-weight: bold;
+  font-family: "Oswald", serif;
+  cursor: pointer;
+  animation: backgroundAnimation 10s linear infinite;
+}
+
+.circle:hover {
+  transform: scale(1.3);
+  transition: transform 0.3s ease;
+}
+
+.blue {
+  background: linear-gradient(
+    45deg,
+    #020306,
+    #03346e,
+    #021526,
+    #1b1bbc,
+    #000000,
+    #0c0c74
+  );
+  background-size: 300% 300%;
+}
+
+.red {
+  background: linear-gradient(
+    45deg,
+    #020306,
+    #680606,
+    #b80a0a,
+    #000000,
+    #8d0808,
+    #b80a0a
+  );
+  background-size: 300% 300%;
+}
+
+.left .circle:nth-child(1) {
+  top: 70%;
+  right: 2%;
+}
+
+.left .circle:nth-child(2) {
+  top: 55%;
+  right: 40%;
+}
+
+.left .circle:nth-child(3) {
+  top: 25%;
+  right: 40%;
+}
+
+.left .circle:nth-child(4) {
+  top: 5%;
+  right: 2%;
+}
+
+.right .circle:nth-child(1) {
+  top: 70%;
+  left: 2%;
+}
+
+.right .circle:nth-child(2) {
+  top: 55%;
+  left: 40%;
+}
+
+.right .circle:nth-child(3) {
+  top: 25%;
+  left: 40%;
+}
+
+.right .circle:nth-child(4) {
+  top: 5%;
+  left: 2%;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
